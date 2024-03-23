@@ -1,0 +1,34 @@
+2024/03/23 03:26:14 [2024-03-23 03:26:14] ID: 0 - Error: no rows in result set
+2024/03/23 04:15:33 [2024-03-23 04:15:33] ID: 0 - Error: no rows in result set
+2024/03/23 04:21:50 [2024-03-23 04:21:50] ID: 0 - Error: no rows in result set
+2024/03/23 04:56:12 [2024-03-23 04:56:12] ID: 0 - Error: no rows in result set
+2024/03/23 17:32:15 [2024-03-23 17:32:15] ID: 0 - Error: Unprocessable Entity
+2024/03/23 17:33:22 [2024-03-23 17:33:22] ID: 0 - Error: Unprocessable Entity
+2024/03/23 17:33:22 [2024-03-23 17:33:22] ID: 0 - Error: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+2024/03/23 17:39:56 [2024-03-23 17:39:56] ID: 0 - Error: no rows in result set
+2024/03/23 17:40:12 [2024-03-23 17:40:12] ID: 0 - Error: no rows in result set
+2024/03/23 17:40:12 [2024-03-23 17:40:12] ID: 0 - Error: no rows in result set
+2024/03/23 17:40:40 [2024-03-23 17:40:40] ID: 0 - Error: no rows in result set
+2024/03/23 17:40:41 [2024-03-23 17:40:41] ID: 0 - Error: no rows in result set
+2024/03/23 17:40:42 [2024-03-23 17:40:42] ID: 0 - Error: no rows in result set
+2024/03/23 17:40:53 [2024-03-23 17:40:53] ID: 0 - Error: no rows in result set
+2024/03/23 17:41:48 [2024-03-23 17:41:48] ID: 0 - Error: no rows in result set
+2024/03/23 17:43:26 [2024-03-23 17:43:26] ID: 0 - Error: no rows in result set
+2024/03/23 18:09:42 [2024-03-23 18:09:42] ID: 0 - Error: Unprocessable Entity
+2024/03/23 18:24:49 [2024-03-23 18:24:49] ID: 0 - Error: invalid character '"' after object key:value pair
+2024/03/23 18:24:49 [2024-03-23 18:24:49] ID: 0 - Error: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+2024/03/23 18:25:01 [2024-03-23 18:25:01] ID: 0 - Error: invalid character '"' after object key:value pair
+2024/03/23 18:25:01 [2024-03-23 18:25:01] ID: 0 - Error: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+2024/03/23 18:26:56 [2024-03-23 18:26:56] ID: 0 - Error: invalid character '"' after object key:value pair
+2024/03/23 18:26:56 [2024-03-23 18:26:56] ID: 0 - Error: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+2024/03/23 18:27:22 [2024-03-23 18:27:22] ID: 0 - Error: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+2024/03/23 18:30:15 [2024-03-23 18:30:15] ID: 0 - Error: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+2024/03/23 18:31:10 [2024-03-23 18:31:10] ID: 0 - Error: json: cannot unmarshal string into Go struct field DeleteUserStr.id of type int32
+2024/03/23 18:31:26 [2024-03-23 18:31:26] ID: 0 - Error: json: cannot unmarshal string into Go struct field DeleteUserStr.id of type int32
+2024/03/23 18:31:35 [2024-03-23 18:31:35] ID: 0 - Error: json: cannot unmarshal string into Go struct field DeleteUserStr.id of type int32
+2024/03/23 18:34:32 [2024-03-23 18:34:32] ID: 0 - Error: invalid character '"' after object key:value pair
+2024/03/23 18:34:52 [2024-03-23 18:34:52] ID: 0 - Error: parsing time "dsada" as "2006-01-02": cannot parse "dsada" as "2006"
+2024/03/23 18:34:52 [2024-03-23 18:34:52] ID: 0 - Error: ERROR: insert or update on table "books" violates foreign key constraint "books_user_id_fkey" (SQLSTATE 23503)
+2024/03/23 18:35:21 [2024-03-23 18:35:21] ID: 0 - Error: parsing time "dsada" as "2006-01-02": cannot parse "dsada" as "2006"
+2024/03/23 18:41:57 [2024-03-23 18:41:57] ID: 0 - Error: parsing time "2020-00-00": month out of range
+2024/03/23 18:42:05 [2024-03-23 18:42:05] ID: 0 - Error: parsing time "2020-01-00": day out of range
