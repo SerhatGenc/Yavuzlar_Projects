@@ -1,0 +1,27 @@
+FROM golang:1.22.1 AS builder
+
+RUN go install github.com/pressly/goose/v3/cmd/goose@latest 
+
+WORKDIR /app
+
+COPY . .
+
+RUN go mod download
+RUN goose -version
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o lib-api main.go
+
+FROM alpine:latest
+
+WORKDIR /root/
+COPY --from=builder /go/bin/goose /app/goose
+COPY --from=builder /app .
+
+ADD https://github.com/pressly/goose/releases/download/v3.7.0/goose_linux_x86_64 /bin/goose
+RUN chmod +x /bin/goose
+
+EXPOSE 8080
+ENTRYPOINT ["/bin/goose", "-dir", "./mig", "postgres", "host=db user=root password=root dbname=library sslmode=disable", "up"] && /bin/bash
+CMD ["./lib-api"]
+
+
+

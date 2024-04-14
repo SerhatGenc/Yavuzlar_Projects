@@ -17,12 +17,12 @@ func SessionMiddleware(config SessionConfig) func(*fiber.Ctx) error {
 
 		sess, err := store.Get(c)
 		if err != nil {
-			return err
+			errors.Logger(err, 0)
 		}
 
 		err = sess.Save()
 		if err != nil {
-			return err
+			errors.Logger(err, 0)
 		}
 
 		c.Locals("sessionStore", store)

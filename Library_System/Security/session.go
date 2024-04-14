@@ -41,17 +41,17 @@ func SessionCreate(config SessionConfig) {
 
 	app.Post("/addUser", func(c *fiber.Ctx) error {
 
-		_, Role := GetSession(c)
+		id, Role := GetSession(c)
 		if Role == "admin" {
 
 			var Data data.AddUserStr
 			err := c.BodyParser(&Data)
 			if err != nil {
-				errors.Logger(err, 0)
+				errors.Logger(err, int(id))
 			}
 
 			controller.AddUser(Data.Email, Data.Password, Data.Name, Data.Surname, Data.Roles)
-			return c.SendString("Used added.")
+			return c.SendString("User added.")
 		} else {
 			return c.Status(fiber.StatusUnauthorized).SendString("Unauthorized")
 		}
@@ -60,13 +60,13 @@ func SessionCreate(config SessionConfig) {
 
 	app.Post("/deleteUser", func(c *fiber.Ctx) error {
 
-		_, Role := GetSession(c)
+		id, Role := GetSession(c)
 		if Role == "admin" {
 
 			var Data data.DeleteUserStr
 			err := c.BodyParser(&Data)
 			if err != nil {
-				errors.Logger(err, 0)
+				errors.Logger(err, int(id))
 			}
 
 			controller.DeleteUser(Data.ID)
@@ -78,13 +78,13 @@ func SessionCreate(config SessionConfig) {
 	})
 	app.Post("/updateUser", func(c *fiber.Ctx) error {
 
-		_, Role := GetSession(c)
+		id, Role := GetSession(c)
 		if Role == "admin" {
 
 			var Data data.FullUserStr
 			err := c.BodyParser(&Data)
 			if err != nil {
-				errors.Logger(err, 0)
+				errors.Logger(err, int(id))
 			}
 
 			controller.UpdateUser(Data.ID, Data.Email, Data.Password, Data.Name, Data.Surname, Data.Roles)
@@ -109,17 +109,17 @@ func SessionCreate(config SessionConfig) {
 
 	//Book
 	app.Post("/addBook", func(c *fiber.Ctx) error {
-		_, Role := GetSession(c)
+		id, Role := GetSession(c)
 		if Role == "admin" {
 
 			var Data data.AddBookStr
 			err := c.BodyParser(&Data)
 			if err != nil {
-				errors.Logger(err, 0)
+				errors.Logger(err, int(id))
 			}
 
 			controller.AddBook(Data.Bookname, Data.Writer, Data.UserID, Data.Deadline)
-			return c.SendString("Used added.")
+			return c.SendString("Book added.")
 		} else {
 			return c.Status(fiber.StatusUnauthorized).SendString("Unauthorized")
 		}
@@ -127,34 +127,34 @@ func SessionCreate(config SessionConfig) {
 	})
 
 	app.Post("/deleteBook", func(c *fiber.Ctx) error {
-		_, Role := GetSession(c)
+		id, Role := GetSession(c)
 		if Role == "admin" {
 
 			var Data data.DeleteBookStr
 			err := c.BodyParser(&Data)
 			if err != nil {
-				errors.Logger(err, 0)
+				errors.Logger(err, int(id))
 			}
 
 			controller.DeleteBook(Data.ID)
-			return c.SendString("Used added.")
+			return c.SendString("Book deleted.")
 		} else {
 			return c.Status(fiber.StatusUnauthorized).SendString("Unauthorized")
 		}
 
 	})
 	app.Post("/updateBook", func(c *fiber.Ctx) error {
-		_, Role := GetSession(c)
+		id, Role := GetSession(c)
 		if Role == "admin" {
 
 			var Data data.FullBookStr
 			err := c.BodyParser(&Data)
 			if err != nil {
-				errors.Logger(err, 0)
+				errors.Logger(err, int(id))
 			}
 
 			controller.UpdateBook(Data.ID, Data.Bookname, Data.Writer, Data.UserID, Data.Deadline)
-			return c.SendString("Used added.")
+			return c.SendString("Book Updated.")
 		} else {
 			return c.Status(fiber.StatusUnauthorized).SendString("Unauthorized")
 		}

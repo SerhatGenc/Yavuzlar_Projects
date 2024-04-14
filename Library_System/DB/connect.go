@@ -11,7 +11,7 @@ import (
 func ConnectDB() (*db.Queries, context.Context) {
 	ctx := context.Background()
 
-	conn, err := pgx.Connect(ctx, "user=root password=root host=localhost port=5432 dbname=library sslmode=disable")
+	conn, err := pgx.Connect(ctx, "postgresql://root:root@db:5432/library?sslmode=disable")
 	if err != nil {
 		errors.Logger(err, 0)
 	}
