@@ -1,0 +1,13 @@
+{
+     "FuncName":"BolBeni",
+    "Code" : "func BolBeni(i float64) float64 { i = i/5 ;return i;}"
+   
+  }
+
+
+
+  {
+     "FuncName":"CarpBeni",
+    "Code" : "func CarpBeni(i float64) float64 { i = i*4 ;return i;}"
+   
+  }
